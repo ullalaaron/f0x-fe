@@ -67,10 +67,10 @@ export function Navbar() {
         borderRadius="1rem"
         display={{ base: "none", md: "inherit" }}
       >
-        <InputLeftElement
-          pointerEvents="none"
-          children={<SearchIcon color="gray.300" />}
-        />
+        <InputLeftElement pointerEvents="none">
+          <SearchIcon color="gray.300" />
+        </InputLeftElement>
+
         <Input type="text" placeholder="Lorem Ipsum" />
       </InputGroup>
       <Box
