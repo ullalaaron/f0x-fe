@@ -8,3 +8,26 @@
   background-position: 0%;
   background-repeat: no-repeat;
 }
+
+.f0xAccordion {
+  background: rgba(13, 13, 13, 0.5);
+  border-radius: 0.25rem;
+  border: transparent;
+  width: 100%;
+  padding: 1rem;
+}
+
+.f0xAccordionItem {
+  text-align: center;
+  background-color: #0d0d0d;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 30%;
+  .detail {
+    color: #8e8b8f;
+  }
+  .master {
+    color: #f6f6f6;
+    font-weight: 400;
+  }
+}
