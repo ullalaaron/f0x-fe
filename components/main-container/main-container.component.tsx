@@ -8,6 +8,7 @@ import {
   Button,
   Flex,
   Heading,
+  HStack,
   Icon,
   Image,
   Link,
@@ -16,23 +17,21 @@ import {
 import * as React from "react";
 import styles from "./main-container.module.scss";
 import { MdOutlineDashboard } from "react-icons/md";
-import { BsBarChartLine } from "react-icons/bs";
+import { BsBarChartLine, BsBoxArrowInUpRight } from "react-icons/bs";
 import { BiHomeCircle } from "react-icons/bi";
+import { SiDiscord } from "react-icons/si";
+import { IoLogoInstagram } from "react-icons/io";
+import { TbBrandTwitter } from "react-icons/tb";
 
 export function MainContainer() {
   const sampleAcordion = (
-    <Accordion
-      className={styles.f0xAccordion}
-      allowMultiple
-      marginBottom={"1rem"}
-    >
+    <Accordion className={styles.f0xAccordion} allowMultiple>
       <AccordionItem>
         <AccordionButton>
-          <Box flex="1" textAlign="left">
-            <Text fontSize="2xl">
-              <Icon as={MdOutlineDashboard} /> Lorem Ipsum{" "}
-            </Text>
-          </Box>
+          <HStack flex="1" textAlign="left">
+            <Icon fontSize="2xl" as={MdOutlineDashboard} />
+            <Text fontSize="2xl">Lorem Ipsum</Text>
+          </HStack>
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
@@ -44,6 +43,29 @@ export function MainContainer() {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
           </Text>
+          <Flex
+            direction="row"
+            wrap="wrap"
+            alignItems="center"
+            marginTop="2rem"
+          >
+            <HStack className={styles.socialContainer}>
+              <BsBoxArrowInUpRight />
+              <Text>Lorem Ipsum.com</Text>
+            </HStack>
+            <HStack className={styles.socialContainer}>
+              <SiDiscord />
+              <Text>@Lorem Ipsum</Text>
+            </HStack>
+            <HStack className={styles.socialContainer}>
+              <IoLogoInstagram />
+              <Text>@Lorem Ipsum</Text>
+            </HStack>
+            <HStack className={styles.socialContainer}>
+              <TbBrandTwitter />
+              <Text>@Lorem Ipsum</Text>
+            </HStack>
+          </Flex>
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
@@ -138,6 +160,7 @@ export function MainContainer() {
               leftIcon={<Icon as={BsBarChartLine} />}
               bg="black"
               opacity="0.5"
+              disabled={true}
             >
               Lorem Ipsum
             </Button>
@@ -148,6 +171,7 @@ export function MainContainer() {
               leftIcon={<Icon as={BiHomeCircle} />}
               bg="black"
               opacity="0.5"
+              disabled={true}
             >
               Lorem Ipsum
             </Button>
@@ -160,18 +184,13 @@ export function MainContainer() {
         >
           <Box w={{ base: "100%", md: "49%" }}>{sampleAcordion}</Box>
           <Flex direction="column" w={{ base: "100%", md: "49%" }}>
-            <Accordion
-              className={styles.f0xAccordion}
-              allowMultiple
-              marginBottom={"1rem"}
-            >
+            <Accordion className={styles.f0xAccordion} allowMultiple>
               <AccordionItem>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <Text fontSize="2xl">
-                      <Icon as={MdOutlineDashboard} /> Lorem Ipsum{" "}
-                    </Text>
-                  </Box>
+                  <HStack flex="1" textAlign="left">
+                    <Icon fontSize="2xl" as={MdOutlineDashboard} />
+                    <Text fontSize="2xl">Lorem Ipsum</Text>
+                  </HStack>
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={4}>
@@ -182,7 +201,9 @@ export function MainContainer() {
                         <Text className={styles.master} fontSize="xl">
                           {item.text}
                         </Text>
-                        <Text className={styles.detail}>{item.percentage}</Text>
+                        <Text className={styles.detail}>
+                          {item.percentage} %
+                        </Text>
                       </Box>
                     ))}
                   </Flex>
